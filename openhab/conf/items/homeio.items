@@ -1,0 +1,32 @@
+Group           Home                        "homeio"           <house>
+
+/* Plantas */
+Group           GF                          "Planta Baja"      <groundfloor>     (Home)
+Group           GG                          "Garaje"           <garage>          (Home)
+Group           GD                          "Jardín"           <garden>          (Home)
+
+/* Salas */
+Group           GF_LivingRoom               "Salón"            <sofa>            (Home, GF)
+Group           GG_Garage                   "Garaje"           <garage>          (Home, GG)
+Group           GD_FrontYard                "Jardín"           <garden>          (Home, GD)
+
+/* Sala de estar */
+Switch          GF_LivingRoom_Light         "Luces"                    <light>           (GF_LivingRoom, gLight)
+Rollershutter   GF_LivingRoom_Shutter       "Persiana"                 <rollershutter>   (GF_LivingRoom, gShutter)
+Number          GF_LivingRoom_Temperature   "Temperatura [%.1f °C]"    <temperature>     (GF_LivingRoom, gTemperature)
+
+/* Garaje */
+Switch          GG_Garage_Light             "Luces"              <light>           (GG_Garage, gLight)
+
+/* Jardín */
+Switch          GD_FrontYard_AutoLight      "Luces Auto"         <switch>          (GD_FrontYard)
+Dimmer          GD_FrontYard_LightDimmer    "Dimmer luces"       <slider>          (GD_FrontYard, gLight)
+
+/* Puerta cochera (pertenece a garaje y jardín) */
+Rollershutter   GD_FrontYard_Shutter        "Portón garaje"         <garagedoor>   (GD_FrontYard, GG_Garage, gShutter)
+Contact         GD_FrontYard_Garage_Status  "Estado portón [%s]"          <garagedoor>   (GD_FrontYard, GG_Garage)
+
+/* Grupos */
+Group:Switch:OR(ON, OFF)           gLight         "Luces"             <light>           (Home)
+Group:Rollershutter:OR(UP, DOWN)   gShutter       "Persianas"         <rollershutter>   (Home)
+Group:Number:AVG                   gTemperature   "Temperaturas"      <temperature>     (Home)

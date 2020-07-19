@@ -1,0 +1,26 @@
+sitemap homeio label="Home I/O" {
+    Frame {
+        Group item=GF_LivingRoom
+        Group item=GG_Garage
+    	Group item=GD_FrontYard
+    }
+
+    Frame label="Grupos" {
+        Text label="Luces" icon="light" {
+        	Switch item=gLight label="Todas las luces"
+            Default item=GF_LivingRoom_Light label="Salón"
+            Default item=GG_Garage_Light label="Garaje"
+            Slider item=GD_FrontYard_LightDimmer label="Jardín"
+        }
+
+        Text label="Persianas" icon="rollershutter" {
+        	Switch item=gShutter label="Todas las persianas" mappings=[100="Cerrar todas", 0="Abrir todas"]
+            Default item=GF_LivingRoom_Shutter label="Salón"
+            Default item=GD_FrontYard_Shutter label="Cochera"
+        }
+
+        Text label="Temperaturas" icon="temperature" {
+            Default item=GF_LivingRoom_Temperature label="Salón"
+        }
+    }
+} 
