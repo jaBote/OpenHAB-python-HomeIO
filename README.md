@@ -12,13 +12,13 @@ This code was born as a college project and has since been made clearer for the 
 - Example of Rollershutter item without openness detector but with limit switch sensors (Contact item), such as the Garage door (room F in Home I/O).
 - Example of temperature readings (Number item) in the Living Room (room A in Home I/O).
 - Simple, easily expandable program in Python.
-- Corresponding items and sitemap in OpenHAB's conf folder for all these examples, with the proper names (essential!) as used in the Python code, for control via OpenHAB Paper UI or other interfaces such as the Android or iOS app.
+- Corresponding items and sitemap in OpenHAB's conf folder for all these examples, with the proper names (essential!) as used in the Python code, for control via OpenHAB Classic UI or other interfaces that allow control over the home such as the Android or iOS app.
 
 These examples cover all the basic devices installed in Home I/O, as all other devices not added in this example can also be controlled as a Switch, Dimmer, Rollershutter, Contact or Number items. Datetime items from Home I/O are not supported yet, but would be an easy addition.
 
 ### Current limitations
 - Usage of the REST API from the python-openhab integration (asynchronous communication by definition) nullifies the bus nature (syncronous by definition) of OpenHAB. As such, it cannot capture events on the bus and limits usage to commands obtainable via the API
-- Everything passes through Python, so no direct control is done via OpenHAB (the illusion is, indeed). Python gets, receives and parses OpenHAB commands, then transmits actions to Home I/O. At startup, Python updates all applicable OpenHAB items with the corresponding Home I/O values.
+- Everything passes through Python, so control is not directly done via OpenHAB (the illusion of control is, indeed). Python gets, receives and parses OpenHAB commands, then transmits actions to Home I/O. At startup, Python updates all applicable OpenHAB items with the corresponding Home I/O values.
 - Datetime items from Home I/O are not supported yet.
 
 ### Not included
