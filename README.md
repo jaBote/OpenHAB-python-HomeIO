@@ -3,6 +3,8 @@ This is an integration between OpenHAB (Open Home Automation Bus, an open source
 
 This code was born as a college project and has since been made clearer for the reader.
 
+The API DLL file `EngineIO.dll` has been included with permission from Home I/O development team. 
+
 ### Currently included
 - Examples of light controls (as switches) in Living Room and Garage (rooms A and F in Home I/O, respectively)
 - Example of light control (as a dimmable light) in the Garden, with 2 ways of operation:
@@ -23,6 +25,8 @@ These examples cover all the basic devices installed in Home I/O, as all other d
 
 ### Not included
 Python source does not include: 
-- The DLLs provided by Home IO. A download is available at its own homepage: https://docs.realgames.co/homeio/en/python/
+- Python (version used: 3.7)
 - The OpenHAB version (used: 2.5.2 but any 2.x version should work just fine) or any of its prerequisites, like Java. Full documentation about OpenHAB is accessible at its own homepage: https://www.openhab.org/
-- The python-openhab integration by sim0nx (https://github.com/sim0nx/python-openhab): `pip install python-openhab`
+- The python-openhab integration by sim0nx (https://github.com/sim0nx/python-openhab): `pip install python-openhab`. Works with commit https://github.com/sim0nx/python-openhab/commit/f71fdf1f9a3b039215392231b92e627fd738de36.
+
+This has not been tested with any later versions of Python, OpenHAB or the python-openhab bridge as the proof of concept has been made for college. However, I will update this to make it work with latest versions in case there is enough interest.
